@@ -3,7 +3,7 @@ package com.hitherejoe.vineyard.ui.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.support.v17.leanback.widget.BaseCardView;
+import androidx.leanback.widget.BaseCardView;
 import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;

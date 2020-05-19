@@ -1,10 +1,13 @@
 package com.hitherejoe.vineyard.ui.activity;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v17.leanback.app.ErrorFragment;
+
+import androidx.fragment.app.Fragment;
+import androidx.leanback.app.ErrorFragment;
+import androidx.leanback.app.ErrorSupportFragment;
+
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -30,14 +33,16 @@ public class MainActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+//        ButterKnife.bind(this);
+
+        mFragmentContainer = findViewById(R.id.frame_container);
 
         if (NetworkUtil.isNetworkConnected(this)) {
             mBrowseFragment = MainFragment.newInstance();
         } else {
             mBrowseFragment = buildErrorFragment();
         }
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(mFragmentContainer.getId(), mBrowseFragment).commit();
     }
 
@@ -55,8 +60,8 @@ public class MainActivity extends BaseActivity {
                 !((MainFragment) mBrowseFragment).isStopping();
     }
 
-    private ErrorFragment buildErrorFragment() {
-        ErrorFragment errorFragment = new ErrorFragment();
+    private ErrorSupportFragment buildErrorFragment() {
+        ErrorSupportFragment errorFragment = new ErrorSupportFragment();
         errorFragment.setTitle(getString(R.string.text_error_oops_title));
         errorFragment.setMessage(getString(R.string.error_message_network_needed_app));
         errorFragment.setButtonText(getString(R.string.text_close));

@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         lb:layout_viewType="main" />
 
-    <android.support.v17.leanback.widget.NonOverlappingFrameLayout
+    <androidx.leanback.widget.NonOverlappingFrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         lb:layout_viewType="info">
@@ -67,5 +67,5 @@
                 android:scaleType="fitCenter"
                 android:visibility="gone" />
         </RelativeLayout>
-    </android.support.v17.leanback.widget.NonOverlappingFrameLayout>
+    </androidx.leanback.widget.NonOverlappingFrameLayout>
 </merge>

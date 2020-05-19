@@ -2,7 +2,7 @@ package com.hitherejoe.vineyard.data.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 public class Tag implements Comparable<Tag>, Parcelable {
     public long tagId;

@@ -2,7 +2,7 @@ package com.hitherejoe.vineyard.runner;
 
 
 import android.os.Bundle;
-import android.support.test.espresso.Espresso;
+import androidx.test.espresso.Espresso;
 
 import com.hitherejoe.vineyard.util.RxIdlingExecutionHook;
 import com.hitherejoe.vineyard.util.RxIdlingResource;

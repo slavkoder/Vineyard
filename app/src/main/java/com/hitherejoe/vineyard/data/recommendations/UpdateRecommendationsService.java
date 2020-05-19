@@ -7,8 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.support.app.recommendation.ContentRecommendation;
-import android.support.v4.content.ContextCompat;
+import androidx.recommendation.app.ContentRecommendation;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.hitherejoe.vineyard.R;

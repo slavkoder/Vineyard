@@ -3,7 +3,7 @@ package com.hitherejoe.vineyard.ui.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.support.v17.leanback.widget.BaseCardView;
+import androidx.leanback.widget.BaseCardView;
 import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
@@ -53,18 +53,28 @@ public class IconCardView extends BaseCardView {
 
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View view = inflater.inflate(R.layout.view_options_item, this);
-        ButterKnife.bind(view);
+
+        mLayout = findViewById(R.id.layout_option_card);
+
+        mIcon = findViewById(R.id.image_option);
+
+        mTitle = findViewById(R.id.text_option_title);
+
+        mValue = findViewById(R.id.text_option_value);
+
         TypedArray cardAttrs =
                 getContext().obtainStyledAttributes(
-                        styleResId, android.support.v17.leanback.R.styleable.lbImageCardView);
+                        styleResId, androidx.leanback.R.styleable.lbImageCardView);
         cardAttrs.recycle();
     }
 
     public void setMainImageDimensions(int width, int height) {
-        ViewGroup.LayoutParams lp = mLayout.getLayoutParams();
-        lp.width = width;
-        lp.height = height;
-        mLayout.setLayoutParams(lp);
+        if (mLayout != null) {
+            ViewGroup.LayoutParams lp = mLayout.getLayoutParams();
+            lp.width = width;
+            lp.height = height;
+            mLayout.setLayoutParams(lp);
+        }
     }
 
     public void setOptionIcon(Drawable drawable) {
@@ -91,9 +101,9 @@ public class IconCardView extends BaseCardView {
             // Not found? Read global ImageCardView style from Theme attribute.
             TypedArray styledAttrs =
                     context.obtainStyledAttributes(
-                            android.support.v17.leanback.R.styleable.LeanbackTheme);
+                            androidx.leanback.R.styleable.LeanbackTheme);
             style = styledAttrs.getResourceId(
-                    android.support.v17.leanback.R.styleable.LeanbackTheme_imageCardViewStyle, 0);
+                    androidx.leanback.R.styleable.LeanbackTheme_imageCardViewStyle, 0);
             styledAttrs.recycle();
         }
         return style;
@@ -104,7 +114,7 @@ public class IconCardView extends BaseCardView {
     }
 
     public IconCardView(Context context, AttributeSet attrs) {
-        this(context, attrs, android.support.v17.leanback.R.attr.imageCardViewStyle);
+        this(context, attrs, androidx.leanback.R.attr.imageCardViewStyle);
     }
 
     @Override

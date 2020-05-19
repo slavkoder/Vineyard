@@ -3,7 +3,7 @@ package com.hitherejoe.vineyard.ui.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v17.leanback.app.GuidedStepFragment;
+import androidx.leanback.app.GuidedStepFragment;
 
 import com.hitherejoe.vineyard.ui.fragment.AutoLoopStepFragment;
 

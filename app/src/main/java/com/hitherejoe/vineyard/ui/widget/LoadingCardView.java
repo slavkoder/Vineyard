@@ -2,7 +2,7 @@ package com.hitherejoe.vineyard.ui.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v17.leanback.widget.BaseCardView;
+import androidx.leanback.widget.BaseCardView;
 import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
@@ -40,7 +40,7 @@ public class LoadingCardView extends BaseCardView {
         inflater.inflate(R.layout.view_loading_card, this);
         TypedArray cardAttrs =
                 getContext().obtainStyledAttributes(
-                        styleResId, android.support.v17.leanback.R.styleable.lbImageCardView);
+                        styleResId, androidx.leanback.R.styleable.lbImageCardView);
 
         mProgressBar = (ProgressBar) findViewById(R.id.progress_indicator);
         cardAttrs.recycle();
@@ -60,9 +60,9 @@ public class LoadingCardView extends BaseCardView {
         if (0 == style) {
             TypedArray styledAttrs =
                     context.obtainStyledAttributes(
-                            android.support.v17.leanback.R.styleable.LeanbackTheme);
+                            androidx.leanback.R.styleable.LeanbackTheme);
             style = styledAttrs.getResourceId(
-                            android.support.v17.leanback.R.styleable.LeanbackTheme_imageCardViewStyle, 0);
+                            androidx.leanback.R.styleable.LeanbackTheme_imageCardViewStyle, 0);
             styledAttrs.recycle();
         }
         return style;
@@ -73,7 +73,7 @@ public class LoadingCardView extends BaseCardView {
     }
 
     public LoadingCardView(Context context, AttributeSet attrs) {
-        this(context, attrs, android.support.v17.leanback.R.attr.imageCardViewStyle);
+        this(context, attrs, androidx.leanback.R.attr.imageCardViewStyle);
     }
 
 }

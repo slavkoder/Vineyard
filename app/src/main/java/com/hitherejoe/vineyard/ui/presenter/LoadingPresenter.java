@@ -1,6 +1,6 @@
 package com.hitherejoe.vineyard.ui.presenter;
 
-import android.support.v17.leanback.widget.Presenter;
+import androidx.leanback.widget.Presenter;
 import android.view.ViewGroup;
 
 import com.hitherejoe.vineyard.ui.widget.LoadingCardView;

@@ -1,21 +1,19 @@
 package com.hitherejoe.vineyard.util;
 
 import android.os.IBinder;
-import android.support.test.espresso.Root;
+import androidx.test.espresso.Root;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
-
-import com.hitherejoe.vineyard.R;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
-import static android.support.test.espresso.core.deps.guava.base.Preconditions.checkArgument;
-import static android.support.test.espresso.matcher.ViewMatchers.isDescendantOfA;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.core.deps.guava.base.Preconditions.checkArgument;
+import static androidx.test.espresso.matcher.ViewMatchers.isDescendantOfA;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
 public class CustomMatchers {

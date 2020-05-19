@@ -4,8 +4,8 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v17.leanback.app.ErrorFragment;
-import android.support.v4.app.FragmentActivity;
+import androidx.leanback.app.ErrorFragment;
+
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -16,7 +16,6 @@ import com.hitherejoe.vineyard.ui.fragment.PostGridFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import timber.log.Timber;
 
 public class PostGridActivity extends BaseActivity {
 

@@ -2,7 +2,7 @@ package com.hitherejoe.vineyard.data.local;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.hitherejoe.vineyard.injection.ApplicationContext;
 

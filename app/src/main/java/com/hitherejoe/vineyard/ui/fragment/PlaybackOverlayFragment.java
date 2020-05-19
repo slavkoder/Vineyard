@@ -8,23 +8,24 @@ import android.media.session.MediaController;
 import android.media.session.PlaybackState;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.v17.leanback.widget.AbstractDetailsDescriptionPresenter;
-import android.support.v17.leanback.widget.Action;
-import android.support.v17.leanback.widget.ArrayObjectAdapter;
-import android.support.v17.leanback.widget.ClassPresenterSelector;
-import android.support.v17.leanback.widget.ControlButtonPresenterSelector;
-import android.support.v17.leanback.widget.HeaderItem;
-import android.support.v17.leanback.widget.ListRow;
-import android.support.v17.leanback.widget.ListRowPresenter;
-import android.support.v17.leanback.widget.OnActionClickedListener;
-import android.support.v17.leanback.widget.PlaybackControlsRow;
-import android.support.v17.leanback.widget.PlaybackControlsRow.PlayPauseAction;
-import android.support.v17.leanback.widget.PlaybackControlsRow.RepeatAction;
-import android.support.v17.leanback.widget.PlaybackControlsRow.SkipNextAction;
-import android.support.v17.leanback.widget.PlaybackControlsRow.SkipPreviousAction;
-import android.support.v17.leanback.widget.PlaybackControlsRowPresenter;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.NonNull;
+import androidx.leanback.app.PlaybackSupportFragment;
+import androidx.leanback.widget.AbstractDetailsDescriptionPresenter;
+import androidx.leanback.widget.Action;
+import androidx.leanback.widget.ArrayObjectAdapter;
+import androidx.leanback.widget.ClassPresenterSelector;
+import androidx.leanback.widget.ControlButtonPresenterSelector;
+import androidx.leanback.widget.HeaderItem;
+import androidx.leanback.widget.ListRow;
+import androidx.leanback.widget.ListRowPresenter;
+import androidx.leanback.widget.OnActionClickedListener;
+import androidx.leanback.widget.PlaybackControlsRow;
+import androidx.leanback.widget.PlaybackControlsRow.PlayPauseAction;
+import androidx.leanback.widget.PlaybackControlsRow.RepeatAction;
+import androidx.leanback.widget.PlaybackControlsRow.SkipNextAction;
+import androidx.leanback.widget.PlaybackControlsRow.SkipPreviousAction;
+import androidx.leanback.widget.PlaybackControlsRowPresenter;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
@@ -47,7 +48,7 @@ import java.util.TimerTask;
 import javax.inject.Inject;
 
 
-public class PlaybackOverlayFragment extends android.support.v17.leanback.app.PlaybackOverlayFragment {
+public class PlaybackOverlayFragment extends PlaybackSupportFragment {
 
     @Inject Bus mEventBus;
     @Inject DataManager mDataManager;
@@ -429,7 +430,7 @@ public class PlaybackOverlayFragment extends android.support.v17.leanback.app.Pl
                 startProgressAutomation();
                 setFadingEnabled(true);
                 notifyChanged(mSkipPreviousAction);
-            } else if (state.getState() == STATE_LOOPING) {
+            } else if (( (int) state.getState()) == STATE_LOOPING) {
                 mCurrentPlaybackState = STATE_LOOPING;
                 startProgressAutomation();
             }

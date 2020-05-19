@@ -2,8 +2,8 @@ package com.hitherejoe.vineyard.ui.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v17.leanback.widget.BaseCardView;
-import android.support.v4.content.ContextCompat;
+import androidx.leanback.widget.BaseCardView;
+import androidx.core.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
@@ -45,7 +45,7 @@ public class TagCardView extends BaseCardView {
         ButterKnife.bind(view);
         TypedArray cardAttrs =
                 getContext().obtainStyledAttributes(
-                        styleResId, android.support.v17.leanback.R.styleable.lbImageCardView);
+                        styleResId, androidx.leanback.R.styleable.lbImageCardView);
         cardAttrs.recycle();
     }
 
@@ -69,9 +69,9 @@ public class TagCardView extends BaseCardView {
             // Not found? Read global ImageCardView style from Theme attribute.
             TypedArray styledAttrs =
                     context.obtainStyledAttributes(
-                            android.support.v17.leanback.R.styleable.LeanbackTheme);
+                            androidx.leanback.R.styleable.LeanbackTheme);
             style = styledAttrs.getResourceId(
-                    android.support.v17.leanback.R.styleable.LeanbackTheme_imageCardViewStyle, 0);
+                    androidx.leanback.R.styleable.LeanbackTheme_imageCardViewStyle, 0);
             styledAttrs.recycle();
         }
         return style;
@@ -82,7 +82,7 @@ public class TagCardView extends BaseCardView {
     }
 
     public TagCardView(Context context, AttributeSet attrs) {
-        this(context, attrs, android.support.v17.leanback.R.attr.imageCardViewStyle);
+        this(context, attrs, androidx.leanback.R.attr.imageCardViewStyle);
     }
 
     @Override
